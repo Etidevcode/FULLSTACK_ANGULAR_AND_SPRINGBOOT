@@ -1,0 +1,12 @@
+cd ANGULAR-TRAINING/
+npm install --location=global @angular/cli@14.0.7  || npm install -g @angular/cli@14.0.7
+npm bin -g
+node --version
+npm --version
+ng version
+ng new my-first-project
+cd new my-first-project/
+ng new sales-project
+cd sales-project/
+ng generate component sales-person-list
+ng generate class sales-person-list/SalesPerson
