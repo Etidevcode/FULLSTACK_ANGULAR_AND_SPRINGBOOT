@@ -11,8 +11,8 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductListComponent implements OnInit {
 
   products: Product[] = [];
-
   currentCategroyId: number = 1; //number = 1
+  searchMode: boolean = false;
 
   constructor(
     private productService: ProductService,
@@ -26,25 +26,47 @@ export class ProductListComponent implements OnInit {
   }
 
   listProducts() {
+    this.searchMode = this.route.snapshot.paramMap.has('keyword');
 
-    // check if "id" parameter is available
-    const hasCategorId: boolean = this.route.snapshot.paramMap.has('id');
-
-    if (hasCategorId) {
-      // get the "id" param string. convert string to a number using the "+" symbol
-      this.currentCategroyId = +this.route.snapshot.paramMap.get('id')!;
+    if (this.searchMode) {
+      this.handleSearchProducts();
+    } else {
+      this.handleListProducts();
     }
-    else {
-      // not category id available ... default to category id 1
-      this.currentCategroyId = 1;
-    }
+    
+  }
 
-    // now get the products for the given category id
-    this.productService.getProducList(this.currentCategroyId).subscribe(
+
+  handleSearchProducts() {
+    const theKeyword: string = this.route.snapshot.paramMap.get('keyword')!;
+
+    // now search for the products using keyword
+    this.productService.searchProducts(theKeyword).subscribe( 
       data => {
         this.products = data;
       }
     );
+  }
+
+  handleListProducts() {
+     // check if "id" parameter is available
+     const hasCategorId: boolean = this.route.snapshot.paramMap.has('id');
+
+     if (hasCategorId) {
+       // get the "id" param string. convert string to a number using the "+" symbol
+       this.currentCategroyId = +this.route.snapshot.paramMap.get('id')!;
+     }
+     else {
+       // not category id available ... default to category id 1
+       this.currentCategroyId = 1;
+     }
+ 
+     // now get the products for the given category id
+     this.productService.getProducList(this.currentCategroyId).subscribe(
+       data => {
+         this.products = data;
+       }
+     );
   }
 
 }
