@@ -5,23 +5,24 @@
 
 
 
-# Creation d'un Premier Projet d'application Angular
-
-![image1](images/first_page_angular.jpeg)
-
-
-# Personnalisation Page Angular
-
-![image](images/first_project.jpeg)
-
-# Projet d'un tableau de ventes
-
-![image](images/sales_project.jpeg)
-
 # Projet Final : Full Stack ecommerce : Angluar et Java Spring Boot
 
-#### Page d'accueil : Liste des prduits
+#### Page d'accueil : Liste des prduits, Pagination et Catégories
 
-![images](images/product_list.jpeg)
+![images](images/image1.jpg)
+![images](images/image2.jpg)
+![images](images/image3.jpg)
+![images](images/image4.jpg)
+
+#### Page de Détail des produits
+
+![images](images/image5.jpg)
+
+#### Recherche Par mots-clés : "a"
+
+![images](images/image6.jpg)
+
+
+
 
 
