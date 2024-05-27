@@ -22,6 +22,14 @@
 
 ![images](images/image6.jpg)
 
+#### Panier 
+
+![images](images/image7.jpg)
+
+#### page de révision
+
+![images](images/image8.jpg)
+
 
 
 
